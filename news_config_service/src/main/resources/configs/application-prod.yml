@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: news-prod
+  datasource:
+    url: jdbc:postgresql://localhost:5432/news_app
+    username: postgres
+    password: 16101992
+    driver-class-name: org.postgresql.Driver
