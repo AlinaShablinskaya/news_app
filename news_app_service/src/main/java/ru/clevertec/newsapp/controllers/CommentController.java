@@ -1,15 +1,19 @@
 package ru.clevertec.newsapp.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.clevertec.newsapp.dto.comment.CommentRequestDto;
 import ru.clevertec.newsapp.dto.comment.CommentResponseDto;
 import ru.clevertec.newsapp.services.CommentService;
 
+import javax.validation.Valid;
+
 /**
  * REST controller for managing comment.
  */
 @RestController
+@Validated
 @RequiredArgsConstructor
 @RequestMapping("/api/comment")
 public class CommentController {
@@ -21,7 +25,7 @@ public class CommentController {
      * @return the new comment in body
      */
     @PostMapping
-    public CommentResponseDto addComment(@RequestBody CommentRequestDto commentRequestDto) {
+    public CommentResponseDto addComment(@Valid @RequestBody CommentRequestDto commentRequestDto) {
         return commentService.addComment(commentRequestDto);
     }
 
@@ -41,7 +45,7 @@ public class CommentController {
      * @return updates comment in body
      */
     @PutMapping
-    public CommentResponseDto updateComment(@RequestBody CommentRequestDto commentRequestDto) {
+    public CommentResponseDto updateComment(@Valid @RequestBody CommentRequestDto commentRequestDto) {
         return commentService.updateComment(commentRequestDto);
     }
 

@@ -34,7 +34,6 @@ class NewsServiceTest {
     private NewsServiceImpl newsService;
     private static News news;
     private static NewsRequestDto newsRequestDto;
-    private static NewsResponseDto newsResponseDto;
 
     @BeforeAll
     static void setup() {
@@ -140,6 +139,5 @@ class NewsServiceTest {
         newsRequestDto.setText("Text");
 
         news = NewsMapper.INSTANCE.convertToNews(newsRequestDto);
-        newsResponseDto = NewsMapper.INSTANCE.convertToNewsResponseDto(news);
     }
 }

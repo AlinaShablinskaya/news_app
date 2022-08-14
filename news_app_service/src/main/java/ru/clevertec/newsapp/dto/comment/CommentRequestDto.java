@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 /**
@@ -18,6 +19,6 @@ public class CommentRequestDto {
     private String text;
     @NotBlank
     private String username;
-    @NotBlank
+    @NotNull
     private Long id_news;
 }

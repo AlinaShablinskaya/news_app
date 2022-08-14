@@ -27,7 +27,7 @@ public class ControllerExceptionHandler {
     @ExceptionHandler(EntityExistsException.class)
     public ResponseError handleEntityAlreadyExistException(EntityExistsException exception) {
         log.error(exception.toString());
-        return new ResponseError(LocalDateTime.now(), "Entity already exist");
+        return new ResponseError(LocalDateTime.now(), exception.getMessage());
     }
 
     /**
@@ -39,6 +39,6 @@ public class ControllerExceptionHandler {
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseError handleEntityNotFoundException(EntityNotFoundException exception) {
         log.error(exception.toString());
-        return new ResponseError(LocalDateTime.now(), "Entity not found");
+        return new ResponseError(LocalDateTime.now(), exception.getMessage());
     }
 }
