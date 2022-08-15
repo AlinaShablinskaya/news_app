@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=16101992
+      - POSTGRES_DB=news_app
+
+  news_config_service:
+      build:
+        context: ./news_config_service
+        dockerfile: Dockerfile
+      ports:
+        - "8888:8888"
+
+  news_app_service:
+    build:
+      context: ./news_app_service
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+      - news_config_service
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/news_app
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=16101992
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"

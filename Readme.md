@@ -17,6 +17,10 @@ https://github.com/AlinaShablinskaya/news_app.git
 ```sh
 ./gradlew build
 ```
+3. Start modules in docker
+```sh
+docker compose up
+```
 ## Profiles
 The location of the database can be changed by using the following three profiles:
 - prod
