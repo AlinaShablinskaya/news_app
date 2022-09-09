@@ -1,4 +1,4 @@
-package ru.clevertec.newsapp.integration;
+package ru.clevertec.newsapp.controllers.integration;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.util.TestPropertyValues;

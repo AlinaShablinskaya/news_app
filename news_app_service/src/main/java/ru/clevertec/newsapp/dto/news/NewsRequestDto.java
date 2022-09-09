@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @Data
 public class NewsRequestDto {
     private Long id;
-    @JsonIgnore
     private final LocalDateTime date = LocalDateTime.now();
     @NotBlank
     private String title;
