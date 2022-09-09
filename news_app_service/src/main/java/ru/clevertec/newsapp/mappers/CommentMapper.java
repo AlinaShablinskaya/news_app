@@ -26,6 +26,5 @@ public interface CommentMapper {
      * @param commentRequestDto Dto to convert
      * @return comment entity
      */
-    @Mapping(target = "date", ignore = true)
     Comment convertToComment(CommentRequestDto commentRequestDto);
 }

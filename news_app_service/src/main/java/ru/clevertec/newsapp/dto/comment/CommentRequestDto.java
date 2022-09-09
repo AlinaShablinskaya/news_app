@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @Data
 public class CommentRequestDto {
     private Long id;
-    @JsonIgnore
     private final LocalDateTime date = LocalDateTime.now();
     @NotBlank
     private String text;
