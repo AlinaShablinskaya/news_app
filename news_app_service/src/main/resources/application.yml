@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: prod
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080

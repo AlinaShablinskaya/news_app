@@ -1,0 +1,4 @@
+rootProject.name = 'news_app'
+
+include 'news_app_service'
+include 'news_config_service'

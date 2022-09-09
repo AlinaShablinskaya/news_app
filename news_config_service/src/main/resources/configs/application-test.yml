@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: news-test
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: test
+    password: test
+  jpa:
+    hibernate:
+      ddl-auto: update
